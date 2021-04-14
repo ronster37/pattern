@@ -25,7 +25,7 @@ router.post('/', asyncWrapper(async (req, res) => {
     }
     const response = await fetch('http://ngrok:4040/api/tunnels');
     const { tunnels } = await response.json();
-    const httpTunnel = tunnels.find(t => t.proto === 'http');
+    const httpTunnel = tunnels.find(t => t.proto === 'https');
     const linkTokenParams = {
       user: {
         client_user_id: "" + userId,
